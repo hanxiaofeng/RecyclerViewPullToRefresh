@@ -2,11 +2,6 @@ package com.example.androidrecyclerviewdemo.listener;
 
 import java.util.List;
 
-/**
- * User:lizhangqu(513163535@qq.com)
- * Date:2015-11-29
- * Time: 21:14
- */
 public interface OnLoadMoreListener<T> {
     /**
      * 加载更多前回调，比如显示Footer的操作

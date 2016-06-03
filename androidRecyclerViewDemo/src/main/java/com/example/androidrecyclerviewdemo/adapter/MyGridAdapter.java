@@ -35,8 +35,6 @@ public class MyGridAdapter extends GridLayoutAdapter{
     @Override
     protected void onBindHeaderView(View headerView) {
         //这是HeadView数据绑定的过程
-//        ImageView imageView= (ImageView) headerView.findViewById(R.id.icon);
-//        Picasso.with(headerView.getContext()).load("http://img.my.csdn.net/uploads/201508/05/1438760758_3497.jpg").into(imageView);
     }
 
     @Override

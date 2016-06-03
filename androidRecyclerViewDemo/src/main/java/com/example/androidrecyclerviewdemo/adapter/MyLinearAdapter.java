@@ -44,13 +44,13 @@ public class MyLinearAdapter extends LinearLayoutAdapter
     @Override
     protected void onBindHeaderView(View headerView)
     {
-
+        //头部绑定后进行一些处理操作
     }
 
     @Override
     protected void onBindFooterView(View footerView)
     {
-
+        //尾部绑定后进行一些处理操作
     }
 
     @Override

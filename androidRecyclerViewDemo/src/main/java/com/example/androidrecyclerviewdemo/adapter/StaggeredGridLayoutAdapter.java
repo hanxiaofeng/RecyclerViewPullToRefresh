@@ -38,6 +38,7 @@ public abstract class StaggeredGridLayoutAdapter<T extends String> extends Recyc
     protected void handleLayoutIfStaggeredGridLayout(RecyclerView.ViewHolder holder, int position) {
         if (isHeader(position) || isFooter(position)) {
             StaggeredGridLayoutManager.LayoutParams p = (StaggeredGridLayoutManager.LayoutParams) holder.itemView.getLayoutParams();
+            //有头尾时合并一列显示
             p.setFullSpan(true);
         }
     }

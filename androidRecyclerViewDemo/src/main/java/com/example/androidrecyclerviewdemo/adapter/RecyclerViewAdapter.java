@@ -14,6 +14,9 @@ import java.util.List;
 public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 {
 
+    /**
+     * 不同的布局类型，0代表头部，1代表尾部，2代表普通布局
+     */
     public interface Item
     {
         int TYPE_HEADER = 0;
@@ -21,14 +24,19 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
         int TYPE_NORMAL = 2;
     }
 
+    //数据源
     private List<T> list = null;
 
+    //头部layout资源id
     private int headerViewRes;
 
+    //尾部layout资源id
     private int footerViewRes;
 
+    //当前是否有头
     private boolean hasHeader = false;
 
+    //当前是否有尾
     private boolean hasFooter = false;
 
     public List<T> getList()
@@ -41,11 +49,21 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
         this.list = list;
     }
 
+    /**
+     * 判断position位置的item是否是头head
+     * @param position
+     * @return
+     */
     public boolean isHeader(int position)
     {
         return hasHeader() && position == 0;
     }
 
+    /**
+     * 判断position位置的item是否是尾foot
+     * @param position
+     * @return
+     */
     public boolean isFooter(int position)
     {
         if (hasHeader())
@@ -79,6 +97,7 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
     }
 
     /**
+     * 设置头部layout布局文件
      *
      * @param headerViewRes
      */
@@ -107,6 +126,7 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
     }
 
     /**
+     * 设置尾部layout布局文件
      *
      * @param footerViewRes
      */
@@ -147,15 +167,30 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
         }
     }
 
+    /**
+     * 构造函数
+     * @param list
+     */
     public RecyclerViewAdapter(List<T> list) {
         this.list = list;
     }
 
+    /**
+     * 构造函数
+     * @param list
+     * @param headerViewRes
+     */
     public RecyclerViewAdapter(List<T> list, int headerViewRes) {
         this.list = list;
         setHeaderView(headerViewRes);
     }
 
+    /**
+     * 构造函数
+     * @param list
+     * @param headerViewRes
+     * @param footerViewRes
+     */
     public RecyclerViewAdapter(List<T> list, int headerViewRes,int footerViewRes)
     {
         this.list = list;
@@ -167,6 +202,9 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
+        /**
+         * 根据不同的类型加载不同的ViewHolder
+         */
         if (hasHeader() && viewType == Item.TYPE_HEADER) {
             View v = LayoutInflater.from(parent.getContext()).inflate(getHeaderView(), parent, false);
             return new HeaderViewHolder(v);
@@ -178,6 +216,8 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
         }
     }
 
+    /*以下是抽象出来的公共方法，用于实现普通布局的处理*/
+
     public abstract RecyclerView.ViewHolder onCreateHolder(ViewGroup parent, int viewType);
 
     protected abstract void onBindHeaderView(View headerView);
@@ -186,9 +226,15 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
 
     protected abstract void onBindItemView(RecyclerView.ViewHolder holder, T item);
 
+    /*抽象结束*/
+
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position)
     {
+        /**
+         * 根据类型来绑定数据
+         */
+
         if (getItemViewType(position) == Item.TYPE_HEADER) {
             HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
             View headerView = headerHolder.itemView;
@@ -206,6 +252,10 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
         }
     }
 
+    /**
+     * 返回item数量
+     * @return
+     */
     @Override
     public int getItemCount() {
         int count = 0;
@@ -215,9 +265,12 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
         return count;
     }
 
-
+    /**
+     * 获取position位置的数据值
+     * @param position
+     * @return
+     */
     protected T getItemByPosition(int position) {
-        int size = list.size();
         if (hasHeader()) {
             return list.get(position - 1);
         } else {
@@ -231,6 +284,7 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
     {
         int size = list.size();
         if (hasHeader()) {
+            //包含头部并且position为0时返回Header类型
             if (position == 0) {
                 return Item.TYPE_HEADER;
             } else {
@@ -250,12 +304,18 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
         }
     }
 
+    /**
+     * 头部viewhodler
+     */
     static class HeaderViewHolder extends RecyclerView.ViewHolder {
         public HeaderViewHolder(View itemView) {
             super(itemView);
         }
     }
 
+    /**
+     * 尾部viewhodler
+     */
     static class FooterViewHolder extends RecyclerView.ViewHolder {
         public FooterViewHolder(View itemView) {
             super(itemView);

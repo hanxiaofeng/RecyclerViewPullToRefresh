@@ -37,6 +37,7 @@ public abstract class GridLayoutAdapter<T extends String> extends RecyclerViewAd
         @Override
         public int getSpanSize(int position) {
             if (isHeader(position) || isFooter(position)) {
+                //包含头部和尾部时合并成一行显示，getSpanCount代表列数
                 return gridManager.getSpanCount();
             }
             return 1;
