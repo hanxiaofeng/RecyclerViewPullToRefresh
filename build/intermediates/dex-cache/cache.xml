@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\eclipseGit\newcode\recyclerView\androidRecyclerViewDemo\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9b5e5cdfde50c43397c9a4fef2160735385a5559">
+        <dex dex="D:\eclipseGit\newcode\recyclerView\androidRecyclerViewDemo\build\intermediates\pre-dexed\debug\instant-run-bootstrap_f8a668e90955101460864f9d7f6b0f53d3740162.jar" />
+    </item>
+
+</items>

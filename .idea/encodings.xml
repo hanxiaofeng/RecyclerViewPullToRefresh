@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/androidRecyclerViewDemo/src/main/java/com/example/androidrecyclerviewdemo/MainActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/androidRecyclerViewDemo/src/main/java/com/example/androidrecyclerviewdemo/adapter/GridLayoutAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/androidRecyclerViewDemo/src/main/java/com/example/androidrecyclerviewdemo/adapter/LinearLayoutAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/androidRecyclerViewDemo/src/main/java/com/example/androidrecyclerviewdemo/adapter/MyGridAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/androidRecyclerViewDemo/src/main/java/com/example/androidrecyclerviewdemo/adapter/MyRecAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/androidRecyclerViewDemo/src/main/java/com/example/androidrecyclerviewdemo/adapter/StaggeredGridLayoutAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/androidRecyclerViewDemo/src/main/java/com/example/androidrecyclerviewdemo/listener/OnLoadMoreListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/androidRecyclerViewDemo/src/main/java/com/example/androidrecyclerviewdemo/listener/OnRecyclerViewScrollListener.java" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

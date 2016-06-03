@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="16"
+    density="xhdpi"
+    format="7"
+    timestamp="5439257096828"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="563" />
+    <task
+        name="instant-run-dex"
+        duration="505" />
+    <task
+        name="instant-run-transform"
+        duration="44" />
+    <task
+        name="verifier"
+        duration="7" />
+
+    <artifact
+        location="D:\eclipseGit\newcode\recyclerView\androidRecyclerViewDemo\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
+
+    <build timestamp="5316507372269" >
+        <artifact
+            location="D:\eclipseGit\newcode\recyclerView\androidRecyclerViewDemo\build\outputs\apk\androidRecyclerViewDemo-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="5439257096828"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="D:\eclipseGit\newcode\recyclerView\androidRecyclerViewDemo\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+
+</instant-run>
